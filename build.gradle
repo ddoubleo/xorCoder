@@ -10,6 +10,12 @@ version '1.0.1'
 repositories {
     mavenCentral()
 }
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    // https://mvnrepository.com/artifact/args4j/args4j
+    compile group: 'args4j', name: 'args4j', version: '2.32'
+
+}
 jar {
     manifest {
         attributes(
@@ -19,6 +25,3 @@ jar {
     }
 }
 
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-}
