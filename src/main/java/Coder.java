@@ -5,29 +5,32 @@ public class Coder {
     public static String input;
 
     static public void decode(String inputRoute, String key, String outputRoute) throws IOException {
-        StringBuilder sb = new StringBuilder();
+        /*StringBuilder sb = new StringBuilder();
         for (char temp : key.toCharArray()
         ) {
             sb.append(Integer.toHexString((int) temp));
         }
-        String hexKey = sb.toString();
-        File output = new File(outputRoute);
-        BufferedReader in
-                = new BufferedReader(new FileReader(inputRoute));
-        PrintWriter out
-                = new PrintWriter(new BufferedWriter(new FileWriter(
-                output)));
-        String inputLine = in.readLine();
-        do {
-            StringBuilder outputLine = new StringBuilder();
-            for (int j = 0; j < inputLine.length(); j++)
-                outputLine.append(Character.toString((char) (inputLine.charAt(j) ^ hexKey.charAt(j%hexKey.length()))));
-            out.println(outputLine.toString());
-        } while ((inputLine = in.readLine()) != null);
-        out.close();
-        in.close();
+        String hexKey = sb.toString();*/
+        //File output = new File(outputRoute);
+        if (!key.matches("[a-f\\d]*")) {
+            throw new IllegalArgumentException("Wrong key: "+key);
+        } else {
+            BufferedReader in
+                    = new BufferedReader(new FileReader(inputRoute));
+            PrintWriter out
+                    = new PrintWriter(new BufferedWriter(new FileWriter(new File(outputRoute))));
+            String inputLine = in.readLine();
+            do {
+                StringBuilder outputLine = new StringBuilder();
+                for (int j = 0; j < inputLine.length(); j++)
+                    outputLine.append(Character.toString((char) (inputLine.charAt(j) ^ key.charAt(j % key.length()))));
+                out.println(outputLine.toString());
+            } while ((inputLine = in.readLine()) != null);
+            out.close();
+            in.close();
+        }
+
+
     }
-
-
 }
 
