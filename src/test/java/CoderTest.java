@@ -16,8 +16,6 @@ public class CoderTest {
             Coder.decode("C:\\Users\\serni\\Desktop\\Encode.txt",
                     "C:\\Users\\serni\\Desktop\\Encoded.txt", "abch");
         });
-
-
     }
     @Test
     public void fileContentChecker1() throws IOException{
@@ -37,8 +35,5 @@ public class CoderTest {
         //Assertions.assertEquals(file1,file2);
         assertTrue(FileUtils.contentEquals(file1, file2));
     }
-    /*@Test
-    public void parserCheck(){
-        
-    } */
+
 }
