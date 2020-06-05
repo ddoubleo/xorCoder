@@ -5,13 +5,6 @@ public class Coder {
     public static String input;
 
     static public void decode(String inputRoute, String key, String outputRoute) throws IOException {
-        /*StringBuilder sb = new StringBuilder();
-        for (char temp : key.toCharArray()
-        ) {
-            sb.append(Integer.toHexString((int) temp));
-        }
-        String hexKey = sb.toString();*/
-        //File output = new File(outputRoute);
         if (!key.matches("[a-f\\d]*")) {
             throw new IllegalArgumentException("Wrong key: "+key);
         } else {
